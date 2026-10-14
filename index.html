@@ -1,11 +1,34 @@
 <!DOCTYPE html>
-
-<html>
+<html lang="th">
 <head>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<base target="_top">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Web App</title>
+    <style>
+        /* จัดหน้าจอให้เต็มจอและซ่อนส่วนที่ล้นออกไป */
+        body, html {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+        
+        /* สร้างกรอบครอบ iframe ให้มีความสูงเผื่อไว้สำหรับดันแถบสีเทาขึ้นด้านบน */
+        .iframe-container {
+            position: absolute;
+            top: -60px; /* ดึงขึ้นไปซ่อนแถบสีเทาด้านบนประมาณ 60 พิกเซล */
+            left: 0;
+            width: 100%;
+            height: calc(100% + 60px); /* เพิ่มความสูงชดเชยส่วนที่ดึงขึ้นไป */
+            border: none;
+        }
+    </style>
 </head>
 <body>
-<iframe style="position: absolute;top: 0;left: 0;width: 100%;height: 100%;border: 0;" src="https://script.google.com/macros/s/AKfycbwIvKLxwEXTW1GuKR27KmXUKDzi2qqmu98e11P5mluzBaItCUz1ujJrqZZdgTqwhPRfWA/exec"></iframe>
+
+    <!-- นำลิงก์ Web App ของ Google Apps Script มาใส่ใน src -->
+    <iframe class="iframe-container" src="https://script.google.com/macros/s/AKfycbwIvKLxwEXTW1GuKR27KmXUKDzi2qqmu98e11P5mluzBaItCUz1ujJrqZZdgTqwhPRfWA/exec"></iframe>
+
 </body>
 </html>
